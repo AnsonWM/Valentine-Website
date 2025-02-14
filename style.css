@@ -29,10 +29,10 @@ body {
 
 @keyframes moveBackground {
   0% {
-      background-position: 0 0, 50px 50px;
+    background-position: 0 0, 50px 50px;
   }
   100% {
-      background-position: 50px 50px, 100px 100px;
+    background-position: 50px 50px, 100px 100px;
   }
 }
 
@@ -45,12 +45,16 @@ body {
   background: var(--bg-envelope-color);
   box-shadow: 0 0 40px var(--shadow-color);
   position: relative;
+  max-width: 90vw; /* Menggunakan max-width untuk menghindari meluap di perangkat kecil */
+  width: 100%;
 }
 
 .envelope-wrapper > .envelope {
   position: relative;
-  width: 300px;
-  height: 230px;
+  width: 100%;
+  height: auto;
+  max-width: 300px; /* Menentukan ukuran maksimal envelope */
+  aspect-ratio: 1.3; /* Memastikan proporsi tetap benar */
 }
 
 .envelope-wrapper > .envelope::before {
@@ -81,8 +85,8 @@ body {
   position: absolute;
   right: 20%;
   bottom: 0;
-  width: 54%;
-  height: 80%;
+  width: 60%;
+  height: 70%;
   background: var(--primary);
   text-align: center;
   transition: all 1s ease-in-out;
@@ -94,15 +98,15 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--txt-color);
   text-align: left;
-  font-size: 10px;
+  font-size: 1rem; /* Menggunakan ukuran font relatif */
 }
 
 .heart {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 15px;
-  height: 15px;
+  width: 3rem; /* Menggunakan unit relatif */
+  height: 3rem;
   background: var(--heart-color);
   z-index: 4;
   transform: translate(-50%, -20%) rotate(45deg);
@@ -115,18 +119,18 @@ body {
 .heart:after {
   content: "";
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 3rem; /* Menggunakan ukuran relatif */
+  height: 3rem;
   background-color: var(--heart-color);
   border-radius: 50%;
 }
 
 .heart:before {
-  top: -7.5px;
+  top: -1.5rem;
 }
 
 .heart:after {
-  right: 7.5px;
+  right: 1.5rem;
 }
 
 .flap > .envelope:before {
@@ -148,16 +152,51 @@ body {
 /* Responsivitas untuk perangkat mobile */
 @media (max-width: 768px) {
   .container {
-      width: 90%;
+    width: 100%;
   }
 
   .envelope-wrapper > .envelope {
-      width: 250px;
-      height: 200px;
+    width: 85%;
+    height: auto;
   }
 
   .envelope > .letter {
-      width: 60%;
-      height: 70%;
+    width: 70%;
+    height: 80%;
+  }
+
+  .heart {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .envelope > .letter > .text {
+    font-size: 0.9rem; /* Menyesuaikan ukuran font pada perangkat kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .envelope-wrapper > .envelope {
+    width: 100%;
+    height: auto;
+  }
+
+  .envelope > .letter {
+    width: 80%;
+    height: 80%;
+  }
+
+  .heart {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .envelope > .letter > .text {
+    font-size: 0.8rem; /* Menyesuaikan ukuran font lebih kecil */
   }
 }
