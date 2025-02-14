@@ -29,10 +29,10 @@ body {
 
 @keyframes moveBackground {
   0% {
-    background-position: 0 0, 50px 50px;
+      background-position: 0 0, 50px 50px;
   }
   100% {
-    background-position: 50px 50px, 100px 100px;
+      background-position: 50px 50px, 100px 100px;
   }
 }
 
@@ -45,16 +45,13 @@ body {
   background: var(--bg-envelope-color);
   box-shadow: 0 0 40px var(--shadow-color);
   position: relative;
-  max-width: 90vw; /* Menggunakan max-width untuk menghindari meluap di perangkat kecil */
-  width: 100%;
+  max-width: 100%; /* Maksimal lebar 100% untuk semua ukuran layar */
 }
 
 .envelope-wrapper > .envelope {
   position: relative;
-  width: 100%;
-  height: auto;
-  max-width: 300px; /* Menentukan ukuran maksimal envelope */
-  aspect-ratio: 1.3; /* Memastikan proporsi tetap benar */
+  width: 300px;
+  height: 230px;
 }
 
 .envelope-wrapper > .envelope::before {
@@ -85,8 +82,8 @@ body {
   position: absolute;
   right: 20%;
   bottom: 0;
-  width: 60%;
-  height: 70%;
+  width: 54%;
+  height: 80%;
   background: var(--primary);
   text-align: center;
   transition: all 1s ease-in-out;
@@ -98,15 +95,15 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--txt-color);
   text-align: left;
-  font-size: 1rem; /* Menggunakan ukuran font relatif */
+  font-size: 10px;
 }
 
 .heart {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 3rem; /* Menggunakan unit relatif */
-  height: 3rem;
+  width: 15px;
+  height: 15px;
   background: var(--heart-color);
   z-index: 4;
   transform: translate(-50%, -20%) rotate(45deg);
@@ -119,18 +116,18 @@ body {
 .heart:after {
   content: "";
   position: absolute;
-  width: 3rem; /* Menggunakan ukuran relatif */
-  height: 3rem;
+  width: 15px;
+  height: 15px;
   background-color: var(--heart-color);
   border-radius: 50%;
 }
 
 .heart:before {
-  top: -1.5rem;
+  top: -7.5px;
 }
 
 .heart:after {
-  right: 1.5rem;
+  right: 7.5px;
 }
 
 .flap > .envelope:before {
@@ -152,51 +149,33 @@ body {
 /* Responsivitas untuk perangkat mobile */
 @media (max-width: 768px) {
   .container {
-    width: 100%;
+      width: 90%;
   }
 
   .envelope-wrapper > .envelope {
-    width: 85%;
-    height: auto;
+      width: 250px;
+      height: 200px;
   }
 
   .envelope > .letter {
-    width: 70%;
-    height: 80%;
-  }
-
-  .heart {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .envelope > .letter > .text {
-    font-size: 0.9rem; /* Menyesuaikan ukuran font pada perangkat kecil */
+      width: 60%;
+      height: 70%;
   }
 }
 
-@media (max-width: 480px) {
+/* Responsivitas untuk perangkat desktop/laptop (lebar lebih besar) */
+@media (min-width: 769px) {
   .container {
-    width: 100%;
-    padding: 10px;
+      width: 80%;
   }
 
   .envelope-wrapper > .envelope {
-    width: 100%;
-    height: auto;
+      width: 350px; /* Lebar envelope lebih besar untuk desktop */
+      height: 270px;
   }
 
   .envelope > .letter {
-    width: 80%;
-    height: 80%;
-  }
-
-  .heart {
-    width: 2rem;
-    height: 2rem;
-  }
-
-  .envelope > .letter > .text {
-    font-size: 0.8rem; /* Menyesuaikan ukuran font lebih kecil */
+      width: 60%;
+      height: 75%;
   }
 }
