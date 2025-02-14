@@ -1,4 +1,4 @@
-:root {
+:root{
   --primary: #fff;
   --bg-color: rgb(5, 53, 61);
   --bg-envelope-color: #f5edd1;
@@ -7,10 +7,8 @@
   --shadow-color: rgba(0, 0, 0, 0.2);
   --txt-color: #444;
   --heart-color: rgb(252, 8, 231);
-  --flower-color: #ff4081; /* Warna bunga */
 }
-
-body {
+body{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -18,54 +16,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-  background-image: radial-gradient(circle, var(--flower-color) 10%, transparent 10%), radial-gradient(circle, var(--flower-color) 10%, transparent 10%);
-  background-size: 100px 100px; /* Ukuran bunga */
-  background-position: 0 0, 50px 50px; /* Posisi bunga-bunga */
-  animation: moveBackground 10s linear infinite;
 }
-
-@keyframes moveBackground {
-  0% {
-      background-position: 0 0, 50px 50px;
-  }
-  100% {
-      background-position: 50px 50px, 100px 100px;
-  }
-}
-
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  flex-wrap: wrap; /* Membuat elemen responsif */
+  height: 100vh;
+  display: grid;
+  place-items: center;
 }
-
-.envelope-wrapper {
+.container > .envelope-wrapper {
   background: var(--bg-envelope-color);
   box-shadow: 0 0 40px var(--shadow-color);
-  position: relative;
-  width: 100%;
-  max-width: 280px; /* Mengurangi ukuran maksimal envelope */
-  height: auto;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
-
 .envelope-wrapper > .envelope {
   position: relative;
-  width: 100%;
-  height: auto;
+  width: 300px;
+  height: 230px;
 }
-
 .envelope-wrapper > .envelope::before {
   content: "";
   position: absolute;
@@ -77,7 +42,6 @@ body {
   transform-origin: top;
   transition: all 0.5s ease-in-out 0.7s;
 }
-
 .envelope-wrapper > .envelope::after {
   content: "";
   position: absolute;
@@ -89,106 +53,63 @@ body {
   border-bottom: 100px solid var(--envelope-cover);
   border-left: 150px solid var(--envelope-cover);
 }
-
 .envelope > .letter {
   position: absolute;
   right: 20%;
   bottom: 0;
-  width: 60%;
-  height: 70%;
+  width: 54%;
+  height: 80%;
   background: var(--primary);
   text-align: center;
   transition: all 1s ease-in-out;
   box-shadow: 0 0 5px var(--shadow-color);
-  padding: 10px;
-  font-size: 1rem;
+  padding: 20px 10px;
 }
 
 .envelope > .letter > .text {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--txt-color);
   text-align: left;
-  font-size: 1rem;
+  font-size: 10px;
 }
-
 .heart {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   background: var(--heart-color);
   z-index: 4;
-  transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -20%) rotate(45deg);
   transition: transform 0.5s ease-in-out 1s;
   box-shadow: 0 1px 6px var(--shadow-color);
   cursor: pointer;
 }
-
 .heart:before, 
 .heart:after {
   content: "";
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   background-color: var(--heart-color);
   border-radius: 50%;
 }
-
 .heart:before {
-  top: -9px;
+  top: -7.5px;
 }
-
 .heart:after {
-  right: 9px;
+  right: 7.5px;
 }
-
 .flap > .envelope:before {
   transform: rotateX(180deg);
   z-index: 0;
 }
-
 .flap > .envelope > .letter {
   bottom: 100px;
   transform: scale(1.5);
   transition-delay: 1s;
 }
-
 .flap > .heart {
   transform: rotate(90deg);
   transition-delay: 0.4s;
-}
-
-/* Responsivitas untuk perangkat Android */
-@media (max-width: 768px) {
-  body {
-    background-size: 80px 80px; /* Mengurangi ukuran bunga agar lebih pas di perangkat kecil */
-  }
-
-  .container {
-    padding: 5px; /* Menyesuaikan padding untuk perangkat lebih kecil */
-  }
-
-  .envelope-wrapper > .envelope {
-    width: 100%;
-    max-width: 260px; /* Ukuran envelope sedikit lebih kecil */
-    height: auto;
-    padding: 5px;
-  }
-
-  .envelope > .letter {
-    width: 80%;
-    height: auto;
-    font-size: 0.9rem; /* Menurunkan ukuran font pada Android */
-    padding: 8px;
-  }
-
-  .envelope > .letter > .text {
-    font-size: 0.9rem; /* Ukuran font lebih kecil di perangkat Android */
-  }
-
-  .heart {
-    width: 16px;
-    height: 16px; /* Ukuran heart lebih kecil di perangkat Android */
-  }
 }
