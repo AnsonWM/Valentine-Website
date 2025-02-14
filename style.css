@@ -40,9 +40,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
+  height: 100%;
   padding: 10px;
+  flex-wrap: wrap; /* Membuat elemen responsif */
 }
 
 .envelope-wrapper {
@@ -50,7 +51,7 @@ body {
   box-shadow: 0 0 40px var(--shadow-color);
   position: relative;
   width: 100%;
-  max-width: 300px; /* Batas maksimal ukuran envelope */
+  max-width: 280px; /* Mengurangi ukuran maksimal envelope */
   height: auto;
   padding: 10px;
   display: flex;
@@ -100,14 +101,14 @@ body {
   transition: all 1s ease-in-out;
   box-shadow: 0 0 5px var(--shadow-color);
   padding: 10px;
-  font-size: 1rem; /* Ukuran font default untuk perangkat mobile */
+  font-size: 1rem;
 }
 
 .envelope > .letter > .text {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--txt-color);
   text-align: left;
-  font-size: 1rem; /* Ukuran font untuk teks */
+  font-size: 1rem;
 }
 
 .heart {
@@ -159,14 +160,18 @@ body {
 }
 
 /* Responsivitas untuk perangkat Android */
-@media (max-width: 7680px) {
+@media (max-width: 768px) {
+  body {
+    background-size: 80px 80px; /* Mengurangi ukuran bunga agar lebih pas di perangkat kecil */
+  }
+
   .container {
     padding: 5px; /* Menyesuaikan padding untuk perangkat lebih kecil */
   }
 
   .envelope-wrapper > .envelope {
     width: 100%;
-    max-width: 280px; /* Ukuran envelope menyesuaikan ukuran layar */
+    max-width: 260px; /* Ukuran envelope sedikit lebih kecil */
     height: auto;
     padding: 5px;
   }
