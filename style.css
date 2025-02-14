@@ -184,6 +184,6 @@ body {
 
   .heart {
     width: 16px;
-    height: 16px; /* Ukuran heart lebih kecil di perangkat Android */
+    height: 160px; /* Ukuran heart lebih kecil di perangkat Android */
   }
 }
