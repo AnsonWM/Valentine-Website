@@ -158,7 +158,7 @@ body {
   transition-delay: 0.4s;
 }
 
-/* Responsivitas untuk perangkat mobile Android & iOS */
+/* Responsivitas untuk perangkat Android */
 @media (max-width: 768px) {
   .container {
     padding: 10px;
@@ -174,16 +174,16 @@ body {
   .envelope > .letter {
     width: 80%;
     height: auto;
-    font-size: 0.8rem; /* Menurunkan ukuran font pada mobile */
+    font-size: 0.9rem; /* Menurunkan ukuran font pada Android */
     padding: 8px;
   }
 
   .envelope > .letter > .text {
-    font-size: 0.9rem; /* Ukuran font lebih kecil di perangkat mobile */
+    font-size: 0.9rem; /* Ukuran font lebih kecil di perangkat Android */
   }
 
   .heart {
     width: 16px;
-    height: 16px; /* Ukuran heart lebih kecil di perangkat mobile */
+    height: 16px; /* Ukuran heart lebih kecil di perangkat Android */
   }
 }
