@@ -161,12 +161,12 @@ body {
 /* Responsivitas untuk perangkat Android */
 @media (max-width: 768px) {
   .container {
-    padding: 10px;
+    padding: 5px; /* Menyesuaikan padding untuk perangkat lebih kecil */
   }
 
   .envelope-wrapper > .envelope {
     width: 100%;
-    max-width: 280px;
+    max-width: 280px; /* Ukuran envelope menyesuaikan ukuran layar */
     height: auto;
     padding: 5px;
   }
