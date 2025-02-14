@@ -159,7 +159,7 @@ body {
 }
 
 /* Responsivitas untuk perangkat Android */
-@media (max-width: 768px) {
+@media (max-width: 7680px) {
   .container {
     padding: 5px; /* Menyesuaikan padding untuk perangkat lebih kecil */
   }
@@ -184,6 +184,6 @@ body {
 
   .heart {
     width: 16px;
-    height: 160px; /* Ukuran heart lebih kecil di perangkat Android */
+    height: 16px; /* Ukuran heart lebih kecil di perangkat Android */
   }
 }
