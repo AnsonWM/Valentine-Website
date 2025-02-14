@@ -37,9 +37,12 @@ body {
 }
 
 .container {
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  height: 100%;
+  padding: 20px;
 }
 
 .envelope-wrapper {
@@ -47,9 +50,9 @@ body {
   box-shadow: 0 0 40px var(--shadow-color);
   position: relative;
   width: 100%;
-  max-width: 350px; /* Menambahkan batas ukuran untuk envelope */
+  max-width: 400px; /* Batas maksimal ukuran envelope */
+  padding: 10px;
   height: auto;
-  padding: 20px;
 }
 
 .envelope-wrapper > .envelope {
@@ -93,14 +96,14 @@ body {
   transition: all 1s ease-in-out;
   box-shadow: 0 0 5px var(--shadow-color);
   padding: 10px;
-  font-size: 16px; /* Ukuran font lebih besar di layar besar */
+  font-size: 1.2rem; /* Ukuran font default */
 }
 
 .envelope > .letter > .text {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: var(--txt-color);
   text-align: left;
-  font-size: 1.1rem; /* Ukuran font responsif */
+  font-size: 1.1rem; /* Ukuran font dalam teks */
 }
 
 .heart {
@@ -154,24 +157,24 @@ body {
 /* Responsivitas untuk perangkat mobile */
 @media (max-width: 768px) {
   .container {
-      width: 100%;
-      padding: 10px;
+    padding: 10px;
   }
 
   .envelope-wrapper > .envelope {
-      width: 90%;
-      height: auto;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
   .envelope > .letter {
-      width: 70%;
-      height: auto;
-      padding: 10px;
-      font-size: 14px; /* Menyesuaikan ukuran font di perangkat mobile */
+    width: 70%;
+    height: auto;
+    font-size: 1rem; /* Menyesuaikan ukuran font di perangkat mobile */
+    padding: 10px;
   }
 
   .envelope > .letter > .text {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Menyesuaikan ukuran font di perangkat mobile */
   }
 
   .heart {
@@ -183,17 +186,17 @@ body {
 /* Responsivitas untuk perangkat desktop/laptop */
 @media (min-width: 769px) {
   .container {
-      width: 80%;
+    padding: 30px;
   }
 
   .envelope-wrapper > .envelope {
-      width: 100%;
-      height: 300px;
+    width: 100%;
+    height: 300px;
   }
 
   .envelope > .letter {
-      width: 60%;
-      height: 75%;
-      font-size: 18px;
+    width: 60%;
+    height: 75%;
+    font-size: 1.2rem;
   }
 }
